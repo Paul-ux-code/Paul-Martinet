@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Martinet | Portfolio</title>
+    <style>
+        /* --- Couleurs --- */
+        :root {
+            --dark-bg: #1a1a1a;
+            --sage-green: #8a9b68;
+            --deep-blue: #1e2a38;
+            --off-white: #f5f5f0;
+            --cream: #e8d5b5;
+            --text-light: #e0e0e0;
+        }
+
+        /* --- Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Animation du nom --- */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--deep-blue), var(--dark-bg));
+        }
+
+        .name-container h1 {
+            font-size: 2.5rem;
+            color: var(--off-white);
+            animation: float 4s ease-in-out infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--sage-green);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            background-color: var(--deep-blue);
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        nav a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--sage-green);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 2rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--sage-green);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--sage-green);
+            padding-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        /* --- Cartes (pour CV, projets, veille) --- */
+        .card {
+            background-color: rgba(30, 42, 56, 0.3);
+            border-radius: 6px;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--sage-green);
+        }
+
+        .card h3 {
+            color: var(--off-white);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .card p, .card li {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .card li::before {
+            content: "• ";
+            color: var(--sage-green);
+        }
+
+        /* --- Éléments discrets --- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(138, 155, 104, 0.03) 0.5px, transparent 1px),
+                radial-gradient(circle at 90% 80%, rgba(138, 155, 104, 0.03) 0.5px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        footer::before {
+            content: "🏀";
+            margin-right: 0.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--deep-blue);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .name-container h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="name-container">
+            <h1>Paul Martinet</h1>
+        </div>
+        <p class="subtitle">Étudiant en BTS SIO SISR | Réseaux et Systèmes</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#parcours">Parcours</a>
+        <a href="#projet">Projet Debian</a>
+        <a href="#veille">Veille</a>
+    </nav>
+
+    <!-- Section Parcours -->
+    <section id="parcours">
+        <h2>Mon Parcours</h2>
+
+        <div class="card">
+            <h3>Expériences</h3>
+            <ul>
+                <li><strong>ECOD’AIR (2024-2025) :</strong> Reconditionnement de PC, audit matériel, installation de systèmes (Windows/Linux).</li>
+                <li><strong>PROTEGO (2023) :</strong> Configuration de serveurs, switchs Cisco et bornes Wi-Fi.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Compétences</h3>
+            <ul>
+                <li><strong>Systèmes :</strong> Linux (Debian), Windows, droits utilisateurs, SSH.</li>
+                <li><strong>Réseaux :</strong> Configuration de switchs/routeurs (Cisco), GNS3, Wireshark, pare-feu.</li>
+                <li><strong>Sécurité :</strong> Certification SecNum (ANSSI), fail2ban.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Formations</h3>
+            <ul>
+                <li><strong>2024-2026 :</strong> BTS SIO SISR (Réseaux).</li>
+                <li><strong>2022-2025 :</strong> Bac Pro Systèmes Numériques (option Réseaux) - Mention Bien.</li>
+                <li><strong>2022 :</strong> Brevet des Collèges.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section Projet Debian -->
+    <section id="projet">
+        <h2>Projet : Extension d'une Architecture sous Debian 13</h2>
+
+        <div class="card">
+            <h3>Contexte</h3>
+            <p>
+                Conception d’un <strong>sous-réseau sécurisé</strong> pour héberger <strong>Grafana</strong> sur une VM Debian 13.
+                Intégration dans un réseau existant (172.10.0.0/16) avec des contraintes strictes :
+            </p>
+            <ul>
+                <li>Accès SSH uniquement depuis le poste administrateur (172.10.16.254).</li>
+                <li>Pare-feu applicatif pour bloquer/autoriser les accès depuis SW2.</li>
+                <li>Protection contre les attaques par force brute (bannissement 24h après 10 échecs en 2h).</li>
+                <li>Respect du FHS et des bonnes pratiques Debian.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Topologie et Adressage</h3>
+            <ul>
+                <li><strong>Zone Office (SW1) :</strong> 172.10.0.0/20 (3045 postes).</li>
+                <li><strong>Zone Technique (SW2) :</strong> 172.10.16.0/24 (200 postes).</li>
+                <li><strong>Nouveau sous-réseau (Grafana) :</strong> 172.10.17.0/25 (65 postes).
+                    <ul>
+                        <li>Routeur R1 (Fa1/0) : 172.10.17.1.</li>
+                        <li>VM Survey_03.lan : 172.10.17.2 (IP fixe).</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Ports ouverts :</strong> 22 (SSH), 3000 (Grafana), 80 (HTTP), 443 (HTTPS).</p>
+        </div>
+
+        <div class="card">
+            <h3>Configuration Clé</h3>
+            <p><strong>Routeur Cisco 3725 :</strong></p>
+            <pre style="background-color: var(--deep-blue); padding: 0.8rem; border-radius: 4px; overflow-x: auto; color: var(--off-white); font-size: 0.9rem;">
+interface fastEthernet 1/0
+ ip address 172.10.17.1 255.255.255.128
+ no shutdown
+            </pre>
+            <p><strong>VM Debian :</strong></p>
+            <pre style="background-color: var(--deep-blue); padding: 0.8rem; border-radius: 4px; overflow-x: auto; color: var(--off-white); font-size: 0.9rem;">
+# Installation Grafana
+sudo apt install -y grafana
+
+# Sécurisation SSH
+PermitRootLogin no
+AllowUsers viz_admin
+
+# Protection (fail2ban)
+bantime = 86400
+maxretry = 10
+            </pre>
+        </div>
+
+        <div class="card">
+            <h3>Outils Utilisés</h3>
+            <ul>
+                <li><strong>GNS3</strong> : Simulation du réseau.</li>
+                <li><strong>Debian 13</strong> : VM hébergeant Grafana.</li>
+                <li><strong>fail2ban</strong> : Protection contre les attaques.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section Veille -->
+    <section id="veille">
+        <h2>Veille Technologique</h2>
+
+        <div class="card">
+            <h3>Refroidissement des Data Centers en Zones Chaudes</h3>
+            <p><strong>Problématique :</strong> Comment refroidir efficacement les data centers dans des environnements à haute température ?</p>
+        </div>
+
+        <div class="card">
+            <h3>Axes Principaux</h3>
+            <ul>
+                <li><strong>Enjeux :</strong> Impact environnemental et défis techniques.</li>
+                <li><strong>Solutions innovantes :</strong> Immersion liquide, IA, data centers sous-marins.</li>
+                <li><strong>Solutions low-tech :</strong> Refroidissement adiabatique, réutilisation de la chaleur.</li>
+                <li><strong>Études de cas :</strong> Google, OVHcloud.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Paul Martinet | BTS SIO SISR | <a href="mailto:paulmartinet24@gmail.com" style="color: var(--sage-green);">paulmartinet24@gmail.com</a></p>
+        <p>Passionné de basketball, cyclisme et histoire.</p>
+    </footer>
+</body>
+</html>
